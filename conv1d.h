@@ -6,7 +6,7 @@ namespace FastConv
 {
 
     template <typename T, int inSizet, int outSizet, int kernelSize, int dilation>
-    class Conv1DT
+    class Conv1DStatic
     {
 
         static constexpr auto memorySize = (kernelSize - 1) * dilation + 1;
@@ -20,7 +20,7 @@ namespace FastConv
         static constexpr auto outSize = outSizet;
         
 
-        Conv1DT()
+        Conv1DStatic()
         {
             for (int i = 0; i < outSize; ++i)
                 weights[i] = filterType::Random();
