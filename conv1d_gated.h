@@ -6,7 +6,7 @@ namespace FastConv
 {
 
     template <typename T, int inSizet, int outSizet, int kernelSize, int dilation>
-    class Conv1DTGated
+    class Conv1DStaticGated
     {
         using vecType = Eigen::Vector<T, outSizet>;
     public:
@@ -15,7 +15,7 @@ namespace FastConv
         static constexpr auto innerSize = inSizet * 2;
         static constexpr auto memorySize = (kernelSize - 1) * dilation + 1;
 
-        Conv1DTGated()
+        Conv1DStaticGated()
         {
             reset();
         }
