@@ -124,7 +124,6 @@ namespace FastConv
             outs.setZero();
         }
 
-        /** Resets the layer state. */
         void reset(size_t newInSize, size_t newOutSize, size_t newKernelSize, int newDilation)
         {
             inSize = newInSize;
