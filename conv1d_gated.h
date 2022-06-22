@@ -49,9 +49,8 @@ namespace FastConv
 
             outConv.forward(outs.data(), outs.data());
             outs += Eigen::Map<const Eigen::Vector<T, outSize>>(in, outSize);            
-            
-            out = outs.data();
-            //std::copy(outs.data(), outs.data() + outSize, out);
+           
+            std::copy(outs.data(), outs.data() + outSize, out);
         }
     };
 
@@ -111,8 +110,7 @@ namespace FastConv
             outConv.forward(outs.data(), outs.data());
             outs += Eigen::Map<const Eigen::Vector<T, Eigen::Dynamic>>(in, outSize);
 
-            out = outs.data();
-            //std::copy(outs.data(), outs.data() + outSize, out);
+            std::copy(outs.data(), outs.data() + outSize, out);
         }
     };
 
